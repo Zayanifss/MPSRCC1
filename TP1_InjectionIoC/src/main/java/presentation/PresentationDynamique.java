@@ -11,10 +11,10 @@ import metier.IMetier;
 
 public class PresentationDynamique {
 	public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
-		Scanner  scanner = new Scanner(new File("C:\\Users\\Utilisateur\\eclipse-workspace\\InverseOfControle\\src\\config.txt"));
+		Scanner  scanner = new Scanner(new File("config.txt"));
 		String daoClassName = scanner.nextLine();
 		String metierClassName = scanner.nextLine();
-		Class<?> cDao = Class.forName(daoClassName); //charger le classe en mémoire
+		Class<?> cDao = Class.forName(daoClassName); //charger le classe en mï¿½moire
 		//IDao dao=(IDao) cDao.newInstance();//ancienne version//creer des instance de classe
 		IDao dao = (IDao) cDao.getConstructor().newInstance();
 		Class<?> cMetier = Class.forName(metierClassName);
